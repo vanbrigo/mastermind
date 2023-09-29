@@ -11,9 +11,32 @@ body {
     padding: 0;
     margin: 0;
     background-color:green ;
+
+}
+
+#containerMayor {
+    height: 100vh;
+    width: 100vw; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 0;
+    margin: 0;
     background-image: url(../img/candy-background.jpg);
     background-size: cover;
+}
 
+#containerMayorPlayer {
+    height: 100vh;
+    width: 100vw; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    
 }
 
 #mitadUno {
@@ -91,4 +114,141 @@ body {
     width: 10em;
     background-color: rgba(255, 255, 255, 0.884);
 }
+
+#containerMayorPlayer {
+    height: 100vh;
+    width: 100vw; 
+
+    padding: 0;
+    margin: 0;
+    background-color: blue;
+    background-image: url();
+    background-size: cover;
+
+    background-image: url(../img/candy-background.jpg);
+    background-size: cover;
+}
+
+#mitadUnoPlayer {
+    height: 100vh;
+    width: 20em;
+    background-color: rgba(250, 235, 215, 0.827);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+
+#mitadDosPlayer {
+    height: 100vh;
+    width: 80em;
+    background-color: rgba(250, 235, 215, 0.827);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 0;
+    padding: 0;
+
+}
+
+.colores {
+    height: 4em;
+    width: 4em;
+    border-radius: 50%;
+    background-color: aqua;
+}
+
+#colorUno{
+    background-color: rgb(86, 255, 80);
+}
+
+#colorDos {
+    background-color: deeppink;
+}
+
+#colorTres {
+    background-color: blueviolet;
+}
+
+#colorCuatro {
+    background-color: gold;
+}
+
+#colorCinco {
+    background-color: rgb(255, 0, 0);
+}
+
+#colorSeis {
+    background-color: rgb(0, 183, 255);
+}
+
+#cajaJuego {
+    background-color: antiquewhite;
+    height: 40rem;
+    width: 30rem;
+}
+
+.caja-intentos {
+    height: 4rem;
+    background-color:rgb(132, 86, 25);
+    margin:0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:0.8rem;
+
+}
+
+#cajaCombinacion {
+    height: 4rem;
+    background-color: rgb(212, 147, 6);
+}
+
+#cajaPistas{
+    height: 4rem;
+    width: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.caja-colores-intentos{
+    height: 3.5rem;
+    width: 3.5rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    margin: 0.5rem;
+}
+
+.cajas-pistas{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 1.5rem;
+    width: 5rem;
+}
+
+.caja-pista-dentro{
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-width: 0.15rem;
+}
+
+#botonCheck{
+    background-color: rgb(35, 84, 191);
+    height: 3rem;
+    width: 6rem;
+    margin-bottom: 2rem;
+    border-radius: 3rem;
+}
+
+
 
