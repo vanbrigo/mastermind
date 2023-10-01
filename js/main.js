@@ -3,10 +3,16 @@ const circulo1=document.getElementById('circulo1')
 const circulo2=document.getElementById('circulo2')
 const circulo3=document.getElementById('circulo3')
 const circulo4=document.getElementById('circulo4')
+const pista1=document.getElementById('pista1')
+const pista2=document.getElementById('pista2')
+const pista3=document.getElementById('pista3')
+const pista4=document.getElementById('pista4')
 const botonCheck=document.getElementById('botonCheck')
 let posicionColor=0
 const intento1=[]
+const intento2=[]
 const combinacion = []
+const intentos=[intento1,]
 
 const combinacionAleatoria = (() => {
     for (i = 0; i <= 3; i++) {
@@ -39,18 +45,50 @@ document.addEventListener('click',(evento)=>{
         circulo4.style.background=colorElegido4
     } if(evento.target.id==='botonCheck' && intento1.length<=4){
         intento1.push(colorElegido1,colorElegido2,colorElegido3,colorElegido4)
-        console.log(intento1.length)
-    }
-})
+        verificar(intento1)
+        pistasNegras(intento1,pista1,pista2,pista3,pista4)
+        console.log(intento1)
+        pistasBlancas(intento1)
+        }
+    })
+
 console.log(combinacionAleatoria())
 
-const verificar=(() => {
-  if (combinacion === intento1) {
+const verificar=((intento) => {
+  if (combinacion === intento){
     console.log('ganaste')
-} if (combinacion[posicionColor] === intento1[posicionColor]) {
- console.log('blue')
+} if (combinacion[posicionColor] === intento[posicionColor]) {
+    console.log('tamoscerca')
 }
+posicionColor=(posicionColor+1)%combinacion.length
 })
+
+const pistasNegras=((numeroIntento,a,b,c,d)=>{
+    if(combinacion[0]===numeroIntento[0]){
+        a.style.background='black'
+    } if(combinacion[1]===numeroIntento[1]){
+        b.style.background='black'
+    } if(combinacion[2]===numeroIntento[2]){
+        c.style.background='black'
+    } if(combinacion[3]===numeroIntento[3]){
+        d.style.background='black'
+    }
+})
+
+const pistasBlancas=((intento)=>{
+   let coincidencias=0
+   for(posicionColor=0; posicionColor<=3; posicionColor++){
+    if(combinacion.includes(intento[posicionColor])){
+        coincidencias++
+    }
+   } console.log(coincidencias)
+   return coincidencias
+})
+
+
+ 
+
+
 
 
 
