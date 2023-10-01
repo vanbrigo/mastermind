@@ -220,7 +220,7 @@ body {
 .caja-colores-intentos{
     height: 3.5rem;
     width: 3.5rem;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     border-radius: 50%;
     margin: 0.5rem;
 }
