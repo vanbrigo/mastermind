@@ -10,8 +10,6 @@ body {
 
     padding: 0;
     margin: 0;
-    background-color:green ;
-
 }
 
 #containerMayor {
@@ -250,6 +248,21 @@ body {
     border-radius: 3rem;
 }
 
+.felicidades-primero{
+    width: 100vw;
+    height: 100vh;
+    font-size: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #14ea0db8;
+    background-image: url(../img/candy.jpg);
+    background-size: cover;
+    color:#b79612;
+    font-family:sans-serif;
+    gap:2em;
+}
 
 
 
