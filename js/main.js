@@ -13,6 +13,7 @@ const intento1=[]
 const intento2=[]
 const combinacion = []
 const intentos=[intento1,]
+const pistaIntento1=[pista1,pista2,pista3,pista4]
 
 const combinacionAleatoria = (() => {
     for (i = 0; i <= 3; i++) {
@@ -46,7 +47,7 @@ document.addEventListener('click',(evento)=>{
     } if(evento.target.id==='botonCheck' && intento1.length<=4){
         intento1.push(colorElegido1,colorElegido2,colorElegido3,colorElegido4)
         verificar(intento1)
-        pistasNegras(intento1,pista1,pista2,pista3,pista4)
+        pistasNegras(intento1,pistaIntento1)
         console.log(intento1)
         pistasBlancas(intento1)
         }
@@ -55,24 +56,22 @@ document.addEventListener('click',(evento)=>{
 console.log(combinacionAleatoria())
 
 const verificar=((intento) => {
-  if (combinacion === intento){
+    combinacionString=combinacion.toString()
+    intentoString=intento.toString()
+  if (combinacionString === intentoString){
     console.log('ganaste')
-} if (combinacion[posicionColor] === intento[posicionColor]) {
-    console.log('tamoscerca')
 }
-posicionColor=(posicionColor+1)%combinacion.length
+console.log(combinacionString)
+console.log(intentoString)
 })
 
-const pistasNegras=((numeroIntento,a,b,c,d)=>{
-    if(combinacion[0]===numeroIntento[0]){
-        a.style.background='black'
-    } if(combinacion[1]===numeroIntento[1]){
-        b.style.background='black'
-    } if(combinacion[2]===numeroIntento[2]){
-        c.style.background='black'
-    } if(combinacion[3]===numeroIntento[3]){
-        d.style.background='black'
-    }
+const pistasNegras=((intento,pista)=>{
+    for(posicionColor=0;posicionColor<intento.length;posicionColor++){
+    if(combinacion[posicionColor]===intento[posicionColor]){
+        pista[posicionColor].style.background='black'
+    } else if(combinacion[posicionColor]!=intento[posicionColor] && combinacion.includes(intento[posicionColor]))
+        pista[posicionColor].style.background='white'
+    } 
 })
 
 const pistasBlancas=((intento)=>{
