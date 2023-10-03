@@ -1,6 +1,17 @@
 const juego=document.getElementById('containerMayorPlayer')
-const bailarinagif="url('../img/candy-girl2')"
 const colores=['#56ff50','#ff1493','#8a2be2','#ffd700','#ff0000','#00b7ff']
+const coloresElegidosUsuario=[]
+const colorOpcion1=document.getElementById('color1')
+const colorOpcion2=document.getElementById('color2')
+const colorOpcion3=document.getElementById('color3')
+const colorOpcion4=document.getElementById('color4')
+const colorOpcion5=document.getElementById('color5')
+const colorOpcion6=document.getElementById('color6')
+const colorOpcion7=document.getElementById('color7')
+const colorOpcion8=document.getElementById('color8')
+const colorOpcion9=document.getElementById('color9')
+const colorOpcion10=document.getElementById('color10')
+
 const circulo1=document.getElementById('circulo1')
 const circulo2=document.getElementById('circulo2')
 const circulo3=document.getElementById('circulo3')
@@ -90,6 +101,45 @@ const pistas8=[pista29,pista30,pista31,pista32]
 const pistasTodas=[pistas1,pistas2,pistas3,pistas4,pistas5,pistas6,pistas7,pistas8]
 let numeroIntento=0
 let numero=0
+let numeroMaximo=5
+
+document.addEventListener('click',(eleccion)=>{
+    let coloresGuardados=Object.keys(localStorage).length
+    if(eleccion.target.id==='color1' && coloresGuardados<=numeroMaximo){
+        let verde='#56ff50'
+        localStorage.setItem('coloruno',verde)
+    } if(eleccion.target.id==='color2' && coloresGuardados<=numeroMaximo){
+        let fucsia='#ff1493'
+        localStorage.setItem('colordos',fucsia)
+    } if(eleccion.target.id==='color3' && coloresGuardados<=numeroMaximo){
+        let morado='#8a2be2'
+        localStorage.setItem('colortres',morado)
+    } if(eleccion.target.id==='color4' && coloresGuardados<=numeroMaximo){
+        let amarillo='#ffd700'
+        localStorage.setItem('colorcuatro',amarillo)
+    } if(eleccion.target.id==='color5' && coloresGuardados<=numeroMaximo){
+        let rojo='#ff0000'
+        localStorage.setItem('colorcinco',rojo)
+    } if(eleccion.target.id==='color6' && coloresGuardados<=numeroMaximo){
+        let celeste='#00b7ff'
+        localStorage.setItem('colorseis',celeste)
+    } if(eleccion.target.id==='color7' && coloresGuardados<=numeroMaximo){
+        let naranja='#ff8c00'
+        localStorage.setItem('colorsiete',naranja)
+    } if(eleccion.target.id==='color8' && coloresGuardados<=numeroMaximo){
+        let azul='#3442d9'
+        localStorage.setItem('colorocho',azul)
+    } if(eleccion.target.id==='color9' && coloresGuardados<=numeroMaximo){
+        let rosa='#d96ccc'
+        localStorage.setItem('colornueve',rosa)
+    } if(eleccion.target.id==='color10' && coloresGuardados<=numeroMaximo){
+        let turquesa='#48e0cb'
+        localStorage.setItem('colordiez',turquesa)
+    }
+})
+
+
+
 
 
 const combinacionAleatoria = (() => {
