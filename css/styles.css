@@ -264,6 +264,20 @@ body {
     gap:2em;
 }
 
+.perdiste-primero{
+    width: 100vw;
+    height: 100vh;
+    font-size: 4rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(../img/candy.jpg);
+    background-size: cover;
+    color:#b79612;
+
+}
+
 
 
 

@@ -78,6 +78,7 @@ const intento6=[]
 const intento7=[]
 const intento8=[]
 const intentos=[intento1,intento2,intento3,intento4,intento5,intento6,intento7,intento8]
+const intentosHechos=[]
 const pistas1=[pista1,pista2,pista3,pista4]
 const pistas2=[pista5,pista6,pista7,pista8]
 const pistas3=[pista9,pista10,pista11,pista12]
@@ -206,6 +207,7 @@ document.addEventListener('click',(evento)=>{
         circulo32.style.background=colorElegido4
     } if (evento.target.id==='botonCheck' && intentos[numero].length<=4){
         intentos[numero].push(colorElegido1,colorElegido2,colorElegido3,colorElegido4)
+        intentosHechos.push(intentos[numero])
         pistas()
         verificar()
         numero++
@@ -228,7 +230,16 @@ const verificar = (() => {
         felicidades.appendChild(bailarina)
         felicidades.classList.add('felicidades-primero')
         console.log('ganaste')
-    } else{
+    } else if (combinacionString != intentoString && intentosHechos.length==8){
+        juego.style.display='none'
+        const perdiste= document.createElement('div')
+        const bailariaSad=document.createElement('img')
+        bailarinaSad.src='../img/tiffi-sad.png'
+        perdiste.appendChild(bailariaSad)
+        perdiste.innerText='Lo siento, perdiste'
+        document.body.appendChild(perdiste)
+        perdiste.classList.add('perdiste-primero')
+    }else{
         numeroIntento++
     }
     console.log(numeroIntento)
@@ -253,6 +264,8 @@ const pistas=(()=>{
             }
         } posicionIntento++
 })
+
+
 
 
 
