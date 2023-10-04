@@ -1,4 +1,3 @@
-const juego=document.getElementById('containerMayorPlayer')
 const colores=['#56ff50','#ff1493','#8a2be2','#ffd700','#ff0000','#00b7ff']
 const coloresElegidosUsuario=[]
 const colorOpcion1=document.getElementById('color1')
@@ -11,7 +10,8 @@ const colorOpcion7=document.getElementById('color7')
 const colorOpcion8=document.getElementById('color8')
 const colorOpcion9=document.getElementById('color9')
 const colorOpcion10=document.getElementById('color10')
-
+const circulos=document.querySelectorAll('colors-selected')
+const botonNext=document.getElementById('botonNext')
 const circulo1=document.getElementById('circulo1')
 const circulo2=document.getElementById('circulo2')
 const circulo3=document.getElementById('circulo3')
@@ -76,10 +76,10 @@ const pista29=document.getElementById('pista29')
 const pista30=document.getElementById('pista30')
 const pista31=document.getElementById('pista31')
 const pista32=document.getElementById('pista32')
+const botonSave=document.getElementById('botonSave')
 const botonCheck=document.getElementById('botonCheck')
-let posicionColor=0
-let posicionIntento=0
-const combinacion = []
+
+
 const intento1=[]
 const intento2=[]
 const intento3=[]
@@ -104,59 +104,70 @@ let numero=0
 let numeroMaximo=5
 
 document.addEventListener('click',(eleccion)=>{
-    let coloresGuardados=Object.keys(localStorage).length
-    if(eleccion.target.id==='color1' && coloresGuardados<=numeroMaximo){
+    if(eleccion.target.id==='color1' && coloresElegidosUsuario.length<=numeroMaximo){
         let verde='#56ff50'
-        localStorage.setItem('coloruno',verde)
-    } if(eleccion.target.id==='color2' && coloresGuardados<=numeroMaximo){
+        coloresElegidosUsuario.push(verde)
+        console.log(coloresElegidosUsuario)
+    } if(eleccion.target.id==='color2' && coloresElegidosUsuario.length<=numeroMaximo){
         let fucsia='#ff1493'
-        localStorage.setItem('colordos',fucsia)
-    } if(eleccion.target.id==='color3' && coloresGuardados<=numeroMaximo){
+        coloresElegidosUsuario.push(fucsia)
+        console.log(coloresElegidosUsuario)
+    } if(eleccion.target.id==='color3' && coloresElegidosUsuario.length<=numeroMaximo){
         let morado='#8a2be2'
-        localStorage.setItem('colortres',morado)
-    } if(eleccion.target.id==='color4' && coloresGuardados<=numeroMaximo){
+        coloresElegidosUsuario.push(morado)
+        console.log(coloresElegidosUsuario)
+    } if(eleccion.target.id==='color4' && coloresElegidosUsuario.length<=numeroMaximo){
         let amarillo='#ffd700'
-        localStorage.setItem('colorcuatro',amarillo)
-    } if(eleccion.target.id==='color5' && coloresGuardados<=numeroMaximo){
+        coloresElegidosUsuario.push(amarillo)
+        console.log(coloresElegidosUsuario)
+    } if(eleccion.target.id==='color5' && coloresElegidosUsuario.length<=numeroMaximo){
         let rojo='#ff0000'
-        localStorage.setItem('colorcinco',rojo)
-    } if(eleccion.target.id==='color6' && coloresGuardados<=numeroMaximo){
+        coloresElegidosUsuario.push(rojo)
+        console.log(coloresElegidosUsuario)
+    } if(eleccion.target.id==='color6' && coloresElegidosUsuario.length<=numeroMaximo){
         let celeste='#00b7ff'
-        localStorage.setItem('colorseis',celeste)
-    } if(eleccion.target.id==='color7' && coloresGuardados<=numeroMaximo){
+        coloresElegidosUsuario.push(celeste)
+        console.log(coloresElegidosUsuario)
+    } if(eleccion.target.id==='color7' && coloresElegidosUsuario.length<=numeroMaximo){
         let naranja='#ff8c00'
-        localStorage.setItem('colorsiete',naranja)
-    } if(eleccion.target.id==='color8' && coloresGuardados<=numeroMaximo){
+        coloresElegidosUsuario.push(naranja)
+        console.log(coloresElegidosUsuario)
+    } if(eleccion.target.id==='color8' && coloresElegidosUsuario.length<=numeroMaximo){
         let azul='#3442d9'
-        localStorage.setItem('colorocho',azul)
-    } if(eleccion.target.id==='color9' && coloresGuardados<=numeroMaximo){
+        coloresElegidosUsuario.push(azul)
+        console.log(coloresElegidosUsuario)
+    } if(eleccion.target.id==='color9' && coloresElegidosUsuario.length<=numeroMaximo){
         let rosa='#d96ccc'
-        localStorage.setItem('colornueve',rosa)
-    } if(eleccion.target.id==='color10' && coloresGuardados<=numeroMaximo){
+        coloresElegidosUsuario.push(rosa)
+        console.log(coloresElegidosUsuario)
+    } if(eleccion.target.id==='color10' && coloresElegidosUsuario.length<=numeroMaximo){
         let turquesa='#48e0cb'
-        localStorage.setItem('colordiez',turquesa)
+        coloresElegidosUsuario.push(turquesa)
+        console.log(coloresElegidosUsuario)
+        console.log(coloresElegidosUsuario.length)
+    } if(eleccion.target.id==='botonSave' && coloresElegidosUsuario.length==6){
+        localStorage.setItem('colores',JSON.stringify(coloresElegidosUsuario))
+        console.log(coloresElegidosUsuario.length)
+    } if(eleccion.target.id==='botonNext'){
+        
     }
 })
 
+// const combinacionAleatoria = (() => {
+//     for (i = 0; i <= 3; i++) {
+//         const numeroAleatorio = Math.floor(Math.random() * 6)
+//         console.log(numeroAleatorio)
+//         const colorSeleccionado = colores[[numeroAleatorio]]
+//         combinacion.push(colorSeleccionado)
+//     }
+//     return combinacion
+// })
 
-
-
-
-const combinacionAleatoria = (() => {
-    for (i = 0; i <= 3; i++) {
-        const numeroAleatorio = Math.floor(Math.random() * 6)
-        console.log(numeroAleatorio)
-        const colorSeleccionado = colores[[numeroAleatorio]]
-        combinacion.push(colorSeleccionado)
-    }
-    return combinacion
-})
-
-const cambioColores =(()=>{
-    let colorElegido= colores[posicionColor]
-    posicionColor=(posicionColor+1)%colores.length
-    return colorElegido
-})
+// const cambioColores =(()=>{
+//     let colorElegido= colores[posicionColor]
+//     posicionColor=(posicionColor+1)%colores.length
+//     return colorElegido
+// })
 
 document.addEventListener('click',(evento)=>{
     if (evento.target.id==='circulo1' && intento1<=0){
@@ -267,53 +278,43 @@ document.addEventListener('click',(evento)=>{
 
 console.log(combinacionAleatoria())
 
-const verificar = (() => {
-    combinacionString = combinacion.toString()
-    intentoString = intentos[numeroIntento].toString()
-    if (combinacionString === intentoString){
-        juego.style.display='none'
-        const felicidades= document.createElement('div')
-        const bailarina=document.createElement('img')
-        felicidades.innerText='Felicidades '
-        bailarina.src='../img/candy-girl2.gif'
-        document.body.appendChild(felicidades)
-        felicidades.appendChild(bailarina)
-        felicidades.classList.add('felicidades-primero')
-        console.log('ganaste')
-    } else if (combinacionString != intentoString && intentosHechos.length==8){
-        juego.style.display='none'
-        const perdiste= document.createElement('div')
-        const bailariaSad=document.createElement('img')
-        bailarinaSad.src='../img/tiffi-sad.png'
-        perdiste.appendChild(bailariaSad)
-        perdiste.innerText='Lo siento, perdiste'
-        document.body.appendChild(perdiste)
-        perdiste.classList.add('perdiste-primero')
-    }else{
-        numeroIntento++
-    }
-    console.log(numeroIntento)
-})
-
-// const pistasNegras=(()=>{
-//     for(posicionColor=0;posicionColor<intentos.length;posicionColor++){
-//     if(combinacion[posicionColor]===intentos[posicionColor[posicionColor]]){
-//         pista[posicionColor].style.background='black'
-//     } else if(combinacion[posicionColor]!=intentos[posicionColor[posicionColor]] && combinacion.includes(intentos[posicionColor[posicionColor]])){
-//         pista[posicionColor].style.background='white'
-//     } 
-// }
+// const verificar = (() => {
+//     combinacionString = combinacion.toString()
+//     intentoString = intentos[numeroIntento].toString()
+//     if (combinacionString === intentoString){
+//         juego.style.display='none'
+//         const felicidades= document.createElement('div')
+//         const bailarina=document.createElement('img')
+//         felicidades.innerText='Felicidades '
+//         bailarina.src='../img/candy-girl2.gif'
+//         document.body.appendChild(felicidades)
+//         felicidades.appendChild(bailarina)
+//         felicidades.classList.add('felicidades-primero')
+//         console.log('ganaste')
+//     } else if (combinacionString != intentoString && intentosHechos.length==8){
+//         juego.style.display='none'
+//         const perdiste= document.createElement('div')
+//         const bailariaSad=document.createElement('img')
+//         bailarinaSad.src='../img/tiffi-sad.png'
+//         perdiste.appendChild(bailariaSad)
+//         perdiste.innerText='Lo siento, perdiste'
+//         document.body.appendChild(perdiste)
+//         perdiste.classList.add('perdiste-primero')
+//     }else{
+//         numeroIntento++
+//     }
+//     console.log(numeroIntento)
 // })
 
-const pistas=(()=>{
-        for(posicionColor=0;posicionColor<=3;posicionColor++){
-            if(combinacion[posicionColor]===intentos[posicionIntento][posicionColor]){
-                pistasTodas[posicionIntento][posicionColor].style.background='black'
-            } else if(combinacion[posicionColor]!=intentos[posicionIntento][posicionColor] && combinacion.includes(intentos[posicionIntento][posicionColor])){
-                pistasTodas[posicionIntento][posicionColor].style.background='white'
-            }
-        } posicionIntento++
-})
+// const pistas=(()=>{
+//         for(posicionColor=0;posicionColor<=3;posicionColor++){
+//             if(combinacion[posicionColor]===intentos[posicionIntento][posicionColor]){
+//                 pistasTodas[posicionIntento][posicionColor].style.background='black'
+//             } else if(combinacion[posicionColor]!=intentos[posicionIntento][posicionColor] && combinacion.includes(intentos[posicionIntento][posicionColor])){
+//                 pistasTodas[posicionIntento][posicionColor].style.background='white'
+//             }
+//         } posicionIntento++
+// })
 
 
 
