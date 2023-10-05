@@ -335,7 +335,6 @@ body {
     cursor: pointer;
 
 }
-  
 
 .felicidades-primero{
     width: 100vw;
@@ -365,6 +364,14 @@ body {
     background-size: cover;
     color:#b79612;
 
+}
+
+#enlaceNext{
+    pointer-events: none;
+}
+
+#enlaceNextA{
+    pointer-events: auto;
 }
 
 

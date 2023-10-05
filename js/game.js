@@ -1,6 +1,8 @@
 const juego=document.getElementById('containerMayorPlayer')
 let posicionColor=0
 let posicionIntento=0
+const botonCheck=document.getElementById('botonCheck')
+const circles=document.querySelectorAll('.colors-selected')
 
 const coloresElegidosUsuario=[]
 const colorOpcion1=document.getElementById('color1')
@@ -13,13 +15,6 @@ const colorOpcion7=document.getElementById('color7')
 const colorOpcion8=document.getElementById('color8')
 const colorOpcion9=document.getElementById('color9')
 const colorOpcion10=document.getElementById('color10')
-const circle1=document.getElementById('selected1')
-const circle2=document.getElementById('selected2')
-const circle3=document.getElementById('selected3')
-const circle4=document.getElementById('selected4')
-const circle5=document.getElementById('selected5')
-const circle6=document.getElementById('selected6')
-const botonNext=document.getElementById('botonNext')
 const circulo1=document.getElementById('circulo1')
 const circulo2=document.getElementById('circulo2')
 const circulo3=document.getElementById('circulo3')
@@ -108,6 +103,7 @@ const pistas8=[pista29,pista30,pista31,pista32]
 const pistasTodas=[pistas1,pistas2,pistas3,pistas4,pistas5,pistas6,pistas7,pistas8]
 let colors=[]
 const combinacion = []
+
 const combinacionAleatoria = ((colors) => {
     for (i = 0; i <= 3; i++) {
         const numeroAleatorio = Math.floor(Math.random() * colors.length)
@@ -120,8 +116,10 @@ const combinacionAleatoria = ((colors) => {
 
 colors=JSON.parse(localStorage.getItem('colores'))
 combinacionAleatoria(colors)
-console.log(colors)
-console.log(combinacion)
+
+for(i=0;i<colors.length;i++){
+    circles[i].style.backgroundColor=colors[i]
+}
 
 
 document.addEventListener('click',(evento)=>{
@@ -271,3 +269,5 @@ const cambioColores =(()=>{
     posicionColor=(posicionColor+1)%colors.length
     return colorElegido
 })
+
+

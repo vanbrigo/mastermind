@@ -1,10 +1,11 @@
 const coloresElegidosUsuario=[]
 const botonSave=document.getElementById('botonSave')
-const botonCheck=document.getElementById('botonCheck')
 const options=document.querySelectorAll('.colors-selection')
 const circles=document.querySelectorAll('.colors-selected')
 const player=document.getElementById('player')
-const playerName=player.value
+const botonNext=document.getElementById('botonNext')
+const enlaceNext=document.getElementById('enlaceNext')
+const enlaceNextA=enlaceNext.id.replace('enlaceNext','enlaceNextA')
 
 let numeroMaximo=5
 
@@ -22,20 +23,51 @@ options.forEach(Element=>{
 
         document.addEventListener('click',(eleccion)=>{
             if(eleccion.target.id===Element.id && coloresElegidosUsuario.length<=numeroMaximo){
-                coloresElegidosUsuario.push(colorHexadecimal)
+                coloresElegidosUsuario.push(colorHexadecimal)  
             } 
         }) 
       }    
 })
 
-document.addEventListener('click',(e)=>{
-    if(e.target.id===('botonSave') && coloresElegidosUsuario.length==6){
+botonSave.addEventListener('click',()=>{
+    if(coloresElegidosUsuario.length==6){
         localStorage.setItem('colores',JSON.stringify(coloresElegidosUsuario))
-    } if(e.target.id===('botonNext') && playerName>=3){
-        localStorage.setItem('player', playerName)
-        console.log(player.value)
+        for(i=0;i<circles.length;i++){
+            circles[i].style.backgroundColor=coloresElegidosUsuario[i]
+        }
+        if(player.value.length>=3){
+            player.disabled=true
+            enlaceNext.id=enlaceNextA
+        }
     } 
 })
+
+// circles.forEach(circles=>{
+//     document.addEventListener('click',(press)=>{
+//         if(press.target.id===circles.id){
+            
+//         }
+//     })
+// })
+
+player.addEventListener('input',()=>{
+if(player.value.length>=3){
+    enlaceNext.id=enlaceNextA
+    botonNext.addEventListener('click',()=>{
+    localStorage.setItem('player',player.value)   
+    })
+}
+})
+
+
+
+// botonNext.addEventListener('click',()=>{
+//     if(player.value.length>=3){
+//     localStorage.setItem('player',player.value)
+//     } else{
+        
+//     }
+// })
 
 // document.addEventListener('click',(eleccion)=>{
 //     if(eleccion.target.id==='color1' && coloresElegidosUsuario.length<=numeroMaximo){
