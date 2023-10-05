@@ -103,6 +103,7 @@ const pistas8=[pista29,pista30,pista31,pista32]
 const pistasTodas=[pistas1,pistas2,pistas3,pistas4,pistas5,pistas6,pistas7,pistas8]
 let colors=[]
 const combinacion = []
+let playerN=localStorage.getItem('player')
 
 const combinacionAleatoria = ((colors) => {
     for (i = 0; i <= 3; i++) {
@@ -120,6 +121,8 @@ combinacionAleatoria(colors)
 for(i=0;i<colors.length;i++){
     circles[i].style.backgroundColor=colors[i]
 }
+
+console.log(combinacion)
 
 
 document.addEventListener('click',(evento)=>{
@@ -244,21 +247,37 @@ const verificar = (() => {
     if (combinacionString === intentoString){
         juego.style.display='none'
         const felicidades= document.createElement('div')
+        const felicidadesTexto= document.createElement('div')
+        const playerBox=document.createElement('div')
         const bailarina=document.createElement('img')
-        felicidades.innerText='Felicidades '
+        const botonInicio=document.createElement('div')
+        felicidadesTexto.innerText='Congratulations'
+        playerBox.innerText=playerN
+        botonInicio.innerText='HOME'
         bailarina.src='../img/candy-girl2.gif'
         document.body.appendChild(felicidades)
+        felicidades.appendChild(felicidadesTexto)
+        felicidades.appendChild(playerBox)
         felicidades.appendChild(bailarina)
+        felicidades.appendChild(botonInicio)
         felicidades.classList.add('felicidades-primero')
+        felicidadesTexto.classList.add('felicidades-texto')
+        playerBox.classList.add('felicidades-texto')
+        botonInicio.classList.add('boton-inicio')
     } else if (combinacionString != intentoString && intentosHechos.length==8){
         juego.style.display='none'
         const perdiste= document.createElement('div')
-        const bailariaSad=document.createElement('img')
-        bailarinaSad.src='../img/tiffy-crying.png'
-        perdiste.appendChild(bailariaSad)
-        perdiste.innerText='Lo siento, perdiste'
+        const playerBox=document.createElement('div')
+        playerBox.innerText=playerN
+        const bailarinaSad=document.createElement('img')
+        bailarinaSad.src='../img/tiffi-crying.png'
+        perdiste.innerText='You lost'
         document.body.appendChild(perdiste)
+        perdiste.appendChild(playerBox)
+        perdiste.appendChild(bailarinaSad)
         perdiste.classList.add('perdiste-primero')
+        playerBox.classList.add('felicidades-texto')
+        
     }else{
         numeroIntento++
     }
