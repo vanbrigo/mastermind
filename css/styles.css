@@ -261,15 +261,21 @@ body {
     border-width: 0.15rem;
 }
 #botonCheck{
-    background-color: rgb(35, 84, 191);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(191, 35, 35);
     height: 3rem;
-    width: 6rem;
+    width: 8rem;
     margin-bottom: 1rem;
     border-radius: 3rem;
+    color: white;
+    font-family: sans-serif;
+    border-style: dashed;
 }
 #botonCheck:hover{
     cursor: pointer;
-
+    background-color: rgb(152, 28, 28);
 }
 .felicidades-primero{
     width: 100vw;
