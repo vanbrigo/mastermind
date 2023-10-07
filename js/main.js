@@ -49,6 +49,10 @@ if(player.value.length>=3){
     player.disabled=true})
     botonNext.addEventListener('click',()=>{
     localStorage.setItem('player',player.value)   
+    if(coloresElegidosUsuario.length<6){
+        coloresElegidosUsuario=['#56ff50','#ff1493','#8a2be2','#ffd700','#ff0000','#00b7ff']
+        localStorage.setItem('colores',JSON.stringify(coloresElegidosUsuario))
+    }
     })
 }else if(player.value.length<3){
     enlaceNext.id='enlaceNext'

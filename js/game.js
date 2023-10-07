@@ -123,8 +123,6 @@ for(i=0;i<colors.length;i++){
 }
 
 console.log(combinacion)
-
-
 document.addEventListener('click',(evento)=>{
     if (evento.target.id==='circulo1' && intento1<=0){
         colorElegido1=cambioColores()
