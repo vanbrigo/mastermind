@@ -50,6 +50,9 @@ if(player.value.length>=3){
     botonNext.addEventListener('click',()=>{
     localStorage.setItem('player',player.value)   
     })
+}else if(player.value.length<3){
+    enlaceNext.id='enlaceNext'
+    botonNext.style.backgroundColor='#08b3589b'
 }
 })
 
