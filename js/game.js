@@ -277,7 +277,6 @@ const verificar = (() => {
         perdiste.appendChild(bailarinaSad)
         perdiste.classList.add('perdiste-primero')
         playerBox.classList.add('felicidades-texto')
-        
     }else{
         numeroIntento++
     }

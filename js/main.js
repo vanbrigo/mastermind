@@ -28,7 +28,6 @@ options.forEach(Element=>{
         }) 
       }    
 })
-
 botonSave.addEventListener('click',()=>{
     if(coloresElegidosUsuario.length==6){
         localStorage.setItem('colores',JSON.stringify(coloresElegidosUsuario))
@@ -38,26 +37,22 @@ botonSave.addEventListener('click',()=>{
         if(player.value.length>=3){
             player.disabled=true
             enlaceNext.id=enlaceNextA
+            botonNext.style.backgroundColor='#0bed74ec'
         }
     } 
 })
-
-// circles.forEach(circles=>{
-//     document.addEventListener('click',(press)=>{
-//         if(press.target.id===circles.id){
-            
-//         }
-//     })
-// })
-
 player.addEventListener('input',()=>{
 if(player.value.length>=3){
     enlaceNext.id=enlaceNextA
+    botonNext.style.backgroundColor='#0bed74ec'
+    player.addEventListener('change',()=>{
+    player.disabled=true})
     botonNext.addEventListener('click',()=>{
     localStorage.setItem('player',player.value)   
     })
 }
 })
+
 
 
 
