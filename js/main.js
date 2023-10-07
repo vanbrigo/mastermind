@@ -5,7 +5,7 @@ const circles=document.querySelectorAll('.colors-selected')
 const player=document.getElementById('player')
 const botonNext=document.getElementById('botonNext')
 const enlaceNext=document.getElementById('enlaceNext')
-const enlaceNextA=enlaceNext.id.replace('enlaceNext','enlaceNextA')
+
 
 let numeroMaximo=5
 
@@ -42,6 +42,7 @@ botonSave.addEventListener('click',()=>{
     } 
 })
 player.addEventListener('input',()=>{
+    const enlaceNextA=enlaceNext.id.replace('enlaceNext','enlaceNextA')
 if(player.value.length>=3){
     enlaceNext.id=enlaceNextA
     botonNext.style.backgroundColor='#0bed74ec'
@@ -51,7 +52,7 @@ if(player.value.length>=3){
     localStorage.setItem('player',player.value)   
     if(coloresElegidosUsuario.length<6){
         coloresElegidosUsuario=['#56ff50','#ff1493','#8a2be2','#ffd700','#ff0000','#00b7ff']
-        localStorage.setItem('colores',JSON.stringify(coloresElegidosUsuario))
+        localStorage.setItem('colores',coloresElegidosUsuario)
     }
     })
 }else if(player.value.length<3){

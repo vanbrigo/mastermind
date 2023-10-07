@@ -298,7 +298,7 @@ body {
     height: 100vh;
     margin: 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
     background-color: #14ea0db8;
@@ -357,9 +357,9 @@ body {
     color: white;
     font-size: 1.5rem;
     -webkit-text-stroke: 0.1rem;
-    position: absolute;
     border-style: dashed;
     font-family:sans-serif;
+    text-decoration: none;
 }
 #containerMayorRules{
     height: 100vh;

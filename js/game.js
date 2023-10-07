@@ -249,32 +249,44 @@ const verificar = (() => {
         const playerBox=document.createElement('div')
         const bailarina=document.createElement('img')
         const botonInicio=document.createElement('div')
+        const botonInicioa=document.createElement('a')
         felicidadesTexto.innerText='Congratulations'
         playerBox.innerText=playerN
         botonInicio.innerText='HOME'
+        botonInicioa.href='../index.html'
         bailarina.src='../img/candy-girl2.gif'
         document.body.appendChild(felicidades)
         felicidades.appendChild(felicidadesTexto)
         felicidades.appendChild(playerBox)
         felicidades.appendChild(bailarina)
-        felicidades.appendChild(botonInicio)
+        felicidades.appendChild(botonInicioa)
+        botonInicioa.appendChild(botonInicio)
         felicidades.classList.add('felicidades-primero')
         felicidadesTexto.classList.add('felicidades-texto')
         playerBox.classList.add('felicidades-texto')
         botonInicio.classList.add('boton-inicio')
+        botonInicioa.classList.add('botones-enlace')
     } else if (combinacionString != intentoString && intentosHechos.length==8){
         juego.style.display='none'
         const perdiste= document.createElement('div')
         const playerBox=document.createElement('div')
         playerBox.innerText=playerN
         const bailarinaSad=document.createElement('img')
+        const botonInicio=document.createElement('div')
+        const botonInicioa=document.createElement('a')
+        botonInicioa.href='../index.html'
         bailarinaSad.src='../img/tiffi-crying.png'
         perdiste.innerText='You lost'
+        botonInicio.innerText='HOME'
         document.body.appendChild(perdiste)
         perdiste.appendChild(playerBox)
         perdiste.appendChild(bailarinaSad)
+        perdiste.appendChild(botonInicioa)
+        botonInicioa.appendChild(botonInicio)
         perdiste.classList.add('perdiste-primero')
         playerBox.classList.add('felicidades-texto')
+        botonInicio.classList.add('boton-inicio')
+        botonInicioa.classList.add('botones-enlace')
     }else{
         numeroIntento++
     }
