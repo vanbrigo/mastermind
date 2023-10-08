@@ -5,8 +5,8 @@ const circles=document.querySelectorAll('.colors-selected')
 const player=document.getElementById('player')
 const botonNext=document.getElementById('botonNext')
 const enlaceNext=document.getElementById('enlaceNext')
-
-
+const enlaceNextA=enlaceNext.id.replace('enlaceNext','enlaceNextA')
+// const enlaceNextB=enlaceNext.id.replace('enlaceNextA','enlaceNext')
 let numeroMaximo=5
 
 options.forEach(Element=>{
@@ -17,10 +17,7 @@ options.forEach(Element=>{
         let r = parseInt(valoresRGB[0]);
         let g = parseInt(valoresRGB[1]);
         let b = parseInt(valoresRGB[2]);
-    
         let colorHexadecimal = "#" + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1);
-        console.log(colorHexadecimal)
-
         document.addEventListener('click',(eleccion)=>{
             if(eleccion.target.id===Element.id && coloresElegidosUsuario.length<=numeroMaximo){
                 coloresElegidosUsuario.push(colorHexadecimal)  
@@ -28,6 +25,7 @@ options.forEach(Element=>{
         }) 
       }    
 })
+
 botonSave.addEventListener('click',()=>{
     if(coloresElegidosUsuario.length==6){
         localStorage.setItem('colores',JSON.stringify(coloresElegidosUsuario))
@@ -42,7 +40,7 @@ botonSave.addEventListener('click',()=>{
     } 
 })
 player.addEventListener('input',()=>{
-    const enlaceNextA=enlaceNext.id.replace('enlaceNext','enlaceNextA')
+    
 if(player.value.length>=3){
     enlaceNext.id=enlaceNextA
     botonNext.style.backgroundColor='#0bed74ec'
