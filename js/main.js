@@ -20,7 +20,11 @@ options.forEach(Element=>{
         let colorHexadecimal = "#" + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1);
         document.addEventListener('click',(eleccion)=>{
             if(eleccion.target.id===Element.id && coloresElegidosUsuario.length<=numeroMaximo){
-                coloresElegidosUsuario.push(colorHexadecimal)  
+                coloresElegidosUsuario.push(colorHexadecimal) 
+                for(i=0;i<=circles.length;i++){
+                    circles[i].style.background=coloresElegidosUsuario[i]
+                
+                }
             } 
         }) 
       }    
@@ -29,9 +33,6 @@ options.forEach(Element=>{
 botonSave.addEventListener('click',()=>{
     if(coloresElegidosUsuario.length==6){
         localStorage.setItem('colores',JSON.stringify(coloresElegidosUsuario))
-        for(i=0;i<circles.length;i++){
-            circles[i].style.backgroundColor=coloresElegidosUsuario[i]
-        }
         if(player.value.length>=3){
             player.disabled=true
             enlaceNext.id=enlaceNextA
