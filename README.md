@@ -24,7 +24,7 @@ Se crearon 4 funciones principales para el funcionamiento del juego. La primera 
 
 ## Tecnologias Utilizadas
 
-<img src="img/html5.png" width="60rem"><img src="img/css.png" width="60rem"><img src="img/javascript.png" width="60rem"><img src="img/github.png" width="55rem">
+<img src="img/html5.png" width="60rem"><img src="img/css.png" width="60rem"><img src="img/javascript.png" width="60rem"><img src="img/github1.png" width="68rem">
 
 ## Como jugar
 

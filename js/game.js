@@ -255,6 +255,7 @@ const verificar = (() => {
         botonInicio.innerText='HOME'
         botonInicioa.href='../index.html'
         bailarina.src='../img/candy-girl2.gif'
+        localStorage.clear()
         document.body.appendChild(felicidades)
         felicidades.appendChild(felicidadesTexto)
         felicidades.appendChild(playerBox)
@@ -287,6 +288,7 @@ const verificar = (() => {
         playerBox.classList.add('felicidades-texto')
         botonInicio.classList.add('boton-inicio')
         botonInicioa.classList.add('botones-enlace')
+        localStorage.clear()
     }else{
         numeroIntento++
     }
