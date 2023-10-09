@@ -6,12 +6,11 @@ const player=document.getElementById('player')
 const botonNext=document.getElementById('botonNext')
 const enlaceNext=document.getElementById('enlaceNext')
 const enlaceNextA=enlaceNext.id.replace('enlaceNext','enlaceNextA')
-// const enlaceNextB=enlaceNext.id.replace('enlaceNextA','enlaceNext')
 let numeroMaximo=5
 
 options.forEach(Element=>{
-    let style=window.getComputedStyle(Element)
-    background=style.backgroundColor
+    let estilo=window.getComputedStyle(Element)
+    let background=estilo.backgroundColor
     if (background.startsWith("rgb")) {
         let valoresRGB = background.match(/\d+/g);
         let r = parseInt(valoresRGB[0]);
@@ -21,9 +20,8 @@ options.forEach(Element=>{
         document.addEventListener('click',(eleccion)=>{
             if(eleccion.target.id===Element.id && coloresElegidosUsuario.length<=numeroMaximo){
                 coloresElegidosUsuario.push(colorHexadecimal) 
-                for(i=0;i<=circles.length;i++){
-                    circles[i].style.background=coloresElegidosUsuario[i]
-                
+                for(let i=0;i<circles.length;i++){
+                    circles[i].style.backgroundColor=coloresElegidosUsuario[i]
                 }
             } 
         }) 
