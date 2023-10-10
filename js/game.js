@@ -276,7 +276,7 @@ const verificar = (() => {
         const botonInicioa=document.createElement('a')
         botonInicioa.href='../index.html'
         bailarinaSad.src='../img/tiffi-crying.png'
-        perdiste.innerText='You lost'
+        perdiste.innerText='You lose'
         botonInicio.innerText='HOME'
         document.body.appendChild(perdiste)
         perdiste.appendChild(playerBox)

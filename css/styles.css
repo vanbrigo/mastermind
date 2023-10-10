@@ -25,6 +25,7 @@ body {
     padding: 0;
     margin: 0;
     background-color: rgba(239, 216, 231, 0.391);
+    overflow: hidden;
 }
 #containerMayorPlayer {
     height: 100vh;
@@ -35,7 +36,8 @@ body {
     padding: 0;
     margin: 0;
     background-image: url(../img/candy-background.jpg);
-    background-size: cover;    
+    background-size: cover;  
+    overflow: hidden;  
 }
 #containerMayorSelection{
     height: 100vh;
@@ -48,6 +50,7 @@ body {
     margin: 0;
     background-image: url(../img/candy-background.jpg);
     background-size: cover;
+    overflow: hidden;
 }
 .container-selection2{
     height: 100vh;
