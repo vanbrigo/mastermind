@@ -1,4 +1,4 @@
-const coloresElegidosUsuario=[]
+let coloresElegidosUsuario=[]
 const botonSave=document.getElementById('botonSave')
 const options=document.querySelectorAll('.colors-selection')
 const circles=document.querySelectorAll('.colors-selected')
@@ -27,36 +27,39 @@ options.forEach(Element=>{
         }) 
       }    
 })
-
 botonSave.addEventListener('click',()=>{
     if(coloresElegidosUsuario.length==6){
         localStorage.setItem('colores',JSON.stringify(coloresElegidosUsuario))
+        console.log(JSON.stringify(coloresElegidosUsuario))
         if(player.value.length>=3){
             player.disabled=true
             enlaceNext.id=enlaceNextA
             botonNext.style.backgroundColor='#0bed74ec'
+        } else if(player.value.length<3){
+            window.alert('You need to insert your nickname')
         }
-    } 
+    } if(coloresElegidosUsuario.length<=5){
+        window.alert('You need to pick 6 colors')
+    }
 })
-player.addEventListener('input',()=>{
-    
+player.addEventListener('input',()=>{   
 if(player.value.length>=3){
     enlaceNext.id=enlaceNextA
     botonNext.style.backgroundColor='#0bed74ec'
     player.addEventListener('change',()=>{
     player.disabled=true})
-    botonNext.addEventListener('click',()=>{
-    localStorage.setItem('player',player.value)   
-    if(coloresElegidosUsuario.length<6){
-        coloresElegidosUsuario=['#56ff50','#ff1493','#8a2be2','#ffd700','#ff0000','#00b7ff']
-        localStorage.setItem('colores',coloresElegidosUsuario)
-    }
-    })
-}else if(player.value.length<3){
+}else if(player.value.length<3 && coloresElegidosUsuario<6){
     enlaceNext.id='enlaceNext'
     botonNext.style.backgroundColor='#08b3589b'
 }
 })
+botonNext.addEventListener('click',()=>{
+    localStorage.setItem('player',player.value)   
+    if(coloresElegidosUsuario.length<6){
+        coloresElegidosUsuario=["#56ff50","#ff1493","#8a2be2","#ffd700","#ff0000","#00b7ff"]
+        localStorage.setItem('colores',JSON.stringify(coloresElegidosUsuario))
+    }
+    })
 
 
 

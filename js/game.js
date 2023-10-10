@@ -122,7 +122,6 @@ for(i=0;i<colors.length;i++){
     circles[i].style.backgroundColor=colors[i]
 }
 
-console.log(combinacion)
 document.addEventListener('click',(evento)=>{
     if (evento.target.id==='circulo1' && intento1<=0){
         colorElegido1=cambioColores()
@@ -136,88 +135,88 @@ document.addEventListener('click',(evento)=>{
     } if(evento.target.id==='circulo4' && intento1<=0){
         colorElegido4=cambioColores()
         circulo4.style.background=colorElegido4
-    } if (evento.target.id==='circulo5' && intento2<=0){
+    } if (evento.target.id==='circulo5' && intento2<=0 && intentosHechos.length>0){
         colorElegido1=cambioColores()
         circulo5.style.background=colorElegido1
-    } if (evento.target.id==='circulo6' && intento2<=0){
+    } if (evento.target.id==='circulo6' && intento2<=0 && intentosHechos.length>0){
         colorElegido2=cambioColores()
         circulo6.style.background=colorElegido2
-    } if (evento.target.id==='circulo7' && intento2<=0){
+    } if (evento.target.id==='circulo7' && intento2<=0 && intentosHechos.length>0){
         colorElegido3=cambioColores()
         circulo7.style.background=colorElegido3
-    } if (evento.target.id==='circulo8' && intento2<=0){
+    } if (evento.target.id==='circulo8' && intento2<=0 && intentosHechos.length>0){
         colorElegido4=cambioColores()
         circulo8.style.background=colorElegido4
-    } if (evento.target.id==='circulo9' && intento3<=0){
+    } if (evento.target.id==='circulo9' && intento3<=0 && intentosHechos.length>1){
         colorElegido1=cambioColores()
         circulo9.style.background=colorElegido1
-    } if (evento.target.id==='circulo10' && intento3<=0){
+    } if (evento.target.id==='circulo10' && intento3<=0 && intentosHechos.length>1){
         colorElegido2=cambioColores()
         circulo10.style.background=colorElegido2
-    } if (evento.target.id==='circulo11' && intento3<=0){
+    } if (evento.target.id==='circulo11' && intento3<=0 && intentosHechos.length>1){
         colorElegido3=cambioColores()
         circulo11.style.background=colorElegido3
-    } if (evento.target.id==='circulo12' && intento3<=0){
+    } if (evento.target.id==='circulo12' && intento3<=0 && intentosHechos.length>1){
         colorElegido4=cambioColores()
         circulo12.style.background=colorElegido4
-    } if (evento.target.id==='circulo13' && intento4<=0){
+    } if (evento.target.id==='circulo13' && intento4<=0 && intentosHechos.length>2){
         colorElegido1=cambioColores()
         circulo13.style.background=colorElegido1
-    } if (evento.target.id==='circulo14' && intento4<=0){
+    } if (evento.target.id==='circulo14' && intento4<=0 && intentosHechos.length>2){
         colorElegido2=cambioColores()
         circulo14.style.background=colorElegido2
-    } if (evento.target.id==='circulo15' && intento4<=0){
+    } if (evento.target.id==='circulo15' && intento4<=0 && intentosHechos.length>2){
         colorElegido3=cambioColores()
         circulo15.style.background=colorElegido3
-    } if (evento.target.id==='circulo16' && intento4<=0){
+    } if (evento.target.id==='circulo16' && intento4<=0 && intentosHechos.length>2){
         colorElegido4=cambioColores()
         circulo16.style.background=colorElegido4
-    } if (evento.target.id==='circulo17' && intento5<=0){
+    } if (evento.target.id==='circulo17' && intento5<=0 && intentosHechos.length>3){
         colorElegido1=cambioColores()
         circulo17.style.background=colorElegido1
-    } if (evento.target.id==='circulo18' && intento5<=0){
+    } if (evento.target.id==='circulo18' && intento5<=0 && intentosHechos.length>3){
         colorElegido2=cambioColores()
         circulo18.style.background=colorElegido2
-    } if (evento.target.id==='circulo19' && intento5<=0){
+    } if (evento.target.id==='circulo19' && intento5<=0 && intentosHechos.length>3){
         colorElegido3=cambioColores()
         circulo19.style.background=colorElegido3
-    } if (evento.target.id==='circulo20' && intento5<=0){
+    } if (evento.target.id==='circulo20' && intento5<=0 && intentosHechos.length>3){
         colorElegido4=cambioColores()
         circulo20.style.background=colorElegido4
-    } if (evento.target.id==='circulo21' && intento6<=0){
+    } if (evento.target.id==='circulo21' && intento6<=0 && intentosHechos.length>4){
         colorElegido1=cambioColores()
         circulo21.style.background=colorElegido1
-    } if (evento.target.id==='circulo22' && intento6<=0){
+    } if (evento.target.id==='circulo22' && intento6<=0 && intentosHechos.length>4){
         colorElegido2=cambioColores()
         circulo22.style.background=colorElegido2
-    } if (evento.target.id==='circulo23' && intento6<=0){
+    } if (evento.target.id==='circulo23' && intento6<=0 && intentosHechos.length>4){
         colorElegido3=cambioColores()
         circulo23.style.background=colorElegido3
-    } if (evento.target.id==='circulo24' && intento6<=0){
+    } if (evento.target.id==='circulo24' && intento6<=0 && intentosHechos.length>4){
         colorElegido4=cambioColores()
         circulo24.style.background=colorElegido4
-    } if (evento.target.id==='circulo25' && intento7<=0){
+    } if (evento.target.id==='circulo25' && intento7<=0 && intentosHechos.length>5){
         colorElegido1=cambioColores()
         circulo25.style.background=colorElegido1
-    } if (evento.target.id==='circulo26' && intento7<=0){
+    } if (evento.target.id==='circulo26' && intento7<=0 && intentosHechos.length>5){
         colorElegido2=cambioColores()
         circulo26.style.background=colorElegido2
-    } if (evento.target.id==='circulo27' && intento7<=0){
+    } if (evento.target.id==='circulo27' && intento7<=0 && intentosHechos.length>5){
         colorElegido3=cambioColores()
         circulo27.style.background=colorElegido3
-    } if (evento.target.id==='circulo28' && intento7<=0){
+    } if (evento.target.id==='circulo28' && intento7<=0 && intentosHechos.length>5){
         colorElegido4=cambioColores()
         circulo28.style.background=colorElegido4
-    } if (evento.target.id==='circulo29' && intento8<=0){
+    } if (evento.target.id==='circulo29' && intento8<=0 && intentosHechos.length>6){
         colorElegido1=cambioColores()
         circulo29.style.background=colorElegido1
-    } if (evento.target.id==='circulo30' && intento8<=0){
+    } if (evento.target.id==='circulo30' && intento8<=0 && intentosHechos.length>6){
         colorElegido2=cambioColores()
         circulo30.style.background=colorElegido2
-    } if (evento.target.id==='circulo31' && intento8<=0){
+    } if (evento.target.id==='circulo31' && intento8<=0 && intentosHechos.length>6){
         colorElegido3=cambioColores()
         circulo31.style.background=colorElegido3
-    } if (evento.target.id==='circulo32' && intento8<=0){
+    } if (evento.target.id==='circulo32' && intento8<=0 && intentosHechos.length>6){
         colorElegido4=cambioColores()
         circulo32.style.background=colorElegido4
     } else if (evento.target.id==='botonCheck' && intentos[numero].length<=4){

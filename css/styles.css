@@ -344,7 +344,7 @@ body {
 #botonNext{
     background-color:  rgba(8, 179, 88, 0.608);
 }
-#enlaceNextA{
+#enlaceNextA,#botonSaveA{
     pointer-events: auto;
 }
 .boton-inicio{
